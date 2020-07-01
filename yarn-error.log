@@ -1,8 +1,8 @@
 Arguments: 
-  E:\Java\node-v10.15.3-win-x64\node.exe E:\Java\node-v10.15.3-win-x64\node-global\node_modules\yarn\bin\yarn.js
+  D:\Java\node-v10.15.3-win-x64\node.exe D:\Java\node-v10.15.3-win-x64\node_modules\yarn\bin\yarn.js install
 
 PATH: 
-  E:\workspace_webstorm\vuepress\vuepress\node_modules\.bin;C:\Program Files\Java\jdk1.8.0_181\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile\;C:\Program Files (x86)\Common Files\Acronis\VirtualFile64\;C:\Program Files (x86)\Common Files\Acronis\FileProtector\;C:\Program Files (x86)\Common Files\Acronis\FileProtector64\;C:\Program Files (x86)\Common Files\Acronis\SnapAPI\;C:\Program Files\mysql-5.7.25-winx64\bin;C:\Program Files\Git\cmd;E:\Java\node-v10.15.3-win-x64;E:\Java\node-v10.15.3-win-x64\node-global;E:\Java\windows_amd64;E:\Java\apache-maven-3.6.0\bin;E:\Java\nginx-1.16.0;E:\Java\Apache24\bin;E:\Java\php7.3.6;E:\Java\php7.3.6\ext;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\TortoiseSVN\bin;C:\Users\user\AppData\Local\Microsoft\WindowsApps;C:\Users\user\AppData\Local\BypassRuntm;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;;C:\Users\user\AppData\Local\Programs\Fiddler
+  D:\workspace\webstorm\wjzhang\vuepress\vuepress\node_modules\.bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Git\cmd;D:\Java\node-v10.15.3-win-x64\;C:\Users\wjzhang\AppData\Local\Microsoft\WindowsApps;
 
 Yarn version: 
   1.22.4
@@ -28,6 +28,8 @@ npm manifest:
     },
     "devDependencies": {
       "vuepress": "1.5.0",
+      "vuepress-plugin-container": "^2.1.4",
+      "vuepress-plugin-cursor-effects": "^1.0.0",
       "vuepress-theme-reco": "1.4.6"
     },
     "dependencies": {

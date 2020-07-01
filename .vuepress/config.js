@@ -71,7 +71,7 @@ module.exports = {
         // 作者
         author: '凝夜紫',
         // 作者头像
-        authorAvatar: '/avatar.png',
+        authorAvatar: '/avatar.jpg',
         // 备案号
         record: '京ICP备19039217号',
         // 项目开始时间
