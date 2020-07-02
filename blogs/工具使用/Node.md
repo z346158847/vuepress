@@ -11,26 +11,26 @@ categories:
 # 一、安装
 [Node下载](https://nodejs.org/zh-cn/)
 将node目录添加到环境变量中
-:::
+```
 node -v
-:::
-
+```
 
 
 
 # 二、npm
-::: tip
+```
 npm -v
 npm install xxx  //安装模块如不指定版本号，默认会安装最新的版本，安装但不写入package.json
 npm install xxx 0.0.1  //安装指定版本的模块
 npm install --save xxx //安装并把模块的版本信息保存到dependencies（生产环境依赖）中，即你的package.json文件的dependencies字段中
 npm install --global xxx
 npm install --save-dev xxx //安装并把模块版本信息保存到devDependencies（开发环境依赖）中，即你的package.json文件的devDependencies字段中
-npm install -g cnpm --registry=https://registry.npm.taobao.org
-:::
+npm install -g cnpm --registry=https://registry.npm.taobao.org  //使用淘宝源
+```
 > --save相当于-s，--global相当于-g，--save-dev相当于-d，--save-optional相当于-o，--save-exact相当于-e。
 
-::: waring
+使用rimraf清理node_modules包
+::: warning
 npm install rimraf -g //删除包特别快
 rimraf node_modules
 :::
