@@ -26,14 +26,14 @@ module.exports = {
                 ]
             }
         ],
-        // sidebar: {
-        //     '/docs/theme-reco/': [
-        //         '',
-        //         'theme',
-        //         'plugin',
-        //         'api'
-        //     ]
-        // },
+        sidebar: {
+            '/docs/theme-reco/': [
+                '',
+                'theme',
+                'plugin',
+                'api'
+            ]
+        },
         type: 'blog',
         // 博客设置
         blogConfig: {
@@ -65,7 +65,9 @@ module.exports = {
         search: true,
         searchMaxSuggestions: 10,
         // 自动形成侧边导航
-        sidebar: 'auto',
+        // sidebar: 'auto',
+        // 侧边栏深度
+        sidebarDepth: 2,
         // 最后更新时间
         lastUpdated: 'Last Updated',
         // 作者
@@ -99,35 +101,12 @@ module.exports = {
         lineNumbers: true
     },
     plugins: [
-        ["cursor-effects",
+        ['cursor-effects',
             {
                 size: 2,                    // size of the particle, default: 2
-                shape: ['star' | 'circle'],  // shape of the particle, default: 'star'
+                shape: 'star',  // shape of the particle, default: 'star',circle
                 zIndex: 999999999           // z-index property of the canvas, default: 999999999
-            }],
-        [
-            'vuepress-plugin-container',
-            {
-                type: 'right',
-                defaultTitle: '',
-            },
-        ],
-        [
-            'vuepress-plugin-container',
-            {
-                type: 'theorem',
-                before: info => `<div class="theorem"><p class="title">${info}</p>`,
-                after: '</div>',
-            },
-        ],
-
-        // 这是 VuePress 默认主题使用这个插件的方式
-        [
-            'vuepress-plugin-container',
-            {
-                type: 'tip',
-                defaultTitle: {},
-            },
+            }
         ]
     ]
 }  
