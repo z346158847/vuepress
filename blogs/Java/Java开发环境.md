@@ -88,9 +88,9 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
 	#进入下载的路径，一般都下载到这里
 	[root@xxx ~]#cd /usr/local/src
     #wget下载
-    [root@xxx ~]#wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+    [root@xxx ~]#wget 'https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm'
     #安装Mysql的yum源
-    [root@xxx ~]#rpm -ivh mysql57-community-release-el7-11.noarch.rpm
+    [root@xxx ~]#rpm -Uvh mysql57-community-release-el7-11.noarch.rpm
 	#检查Mysql的yum源是否安装成功
 	[root@xxx ~]#yum repolist enabled | grep "mysql.*-community.*"
     mysql-connectors-xxxxxx
@@ -101,6 +101,9 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
 ### 3.安装Mysql
 
 	[root@xxx ~]#yum -y install mysql-community-server
+	#如果出现问题 卸载流程
+	[root@xxx ~]#rpm -qa|grep -i mysql
+	[root@xxx ~]#rpm -e --noscripts  "上边的包名"
 
 ### 4.测试连接Mysql服务
 
@@ -144,7 +147,8 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
 ### 6.设置远程访问（看情况选择）
 
 	#默认情况下 MySQL 是不允许远程连接的 允许任意主机通过 root 用户使用 密码连接到mysql服务器
-    mysql>grant all privileges on *.* to root@"%" identified by '复杂密码';
+	mysql>alter user 'root'@'localhost' identified by 'youpassword';  
+    mysql>grant all privileges on *.* to root@'%' identified by 'youpassword';
     #刷新
     mysql>flush privileges;
 
@@ -159,7 +163,7 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
 	#进入下载的路径
 	[root@xxx ~]#cd /usr/local/src
     #wget下载
-    [root@xxx ~]#wget https://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.43/bin/apache-tomcat-8.5.43.tar.gz
+    [root@xxx ~]#wget https://mirror.bit.edu.cn/apache/tomcat/tomcat-8/v8.5.57/bin/apache-tomcat-8.5.57.tar.gz
     [root@xxx ~]#tar -zxvf  apache-tomcat-8.5.43.tar.gz
     [root@xxx ~]#cd apache-tomcat-8.5.43/bin
 
@@ -243,8 +247,9 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
 **方法1：使用rngd 软件增大熵池 建议使用**
 
     grep  rdrand /proc/cpuinfo #需要cpu支持
-    yum install rng-tools # 安装rngd服务（熵服务，增大熵池）
+    yum -y install rng-tools # 安装rngd服务（熵服务，增大熵池）
     systemctl start rngd  # 启动服务
+    systemctl enable rngd  # 启动服务
 
 **方法2：java环境下修改配置文件**
 

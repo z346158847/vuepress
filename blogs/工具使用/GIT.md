@@ -40,6 +40,7 @@ git remote add origin git@github.com:z346158847/vuepress.git  //添加远程仓�
 git clone git@github.com:z346158847/vuepress.git  //克隆仓库，注意加个yes 
 git pull origin master  //拉取代码 缩写 git pull
 git push origin master  //推送代码 缩写 git push
+git reset --hard  'id'  //回退版本
 ```
 
 

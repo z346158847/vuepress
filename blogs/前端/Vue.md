@@ -79,3 +79,16 @@ module.exports = {
     pluginOptions: {}
 }
 ```
+
+
+
+
+## Vue踩坑记录
+### 
+
+vue项目部署 
+生产环境静态文件为nginx目录下的目录名
+
+生产接口为后台接口
+
+history去除
