@@ -91,9 +91,6 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
     [root@xxx ~]#wget 'https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm'
     #安装Mysql的yum源
     [root@xxx ~]#rpm -Uvh mysql57-community-release-el7-11.noarch.rpm
-	#检查Mysql的yum源是否安装成功
-	[root@xxx ~]#yum repolist enabled | grep "mysql.*-community.*"
-    mysql-connectors-xxxxxx
     # 查看Mysql版本
     [root@xxx ~]#yum repolist all | grep mysql
 
@@ -103,7 +100,8 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
 	[root@xxx ~]#yum -y install mysql-community-server
 	#如果出现问题 卸载流程
 	[root@xxx ~]#rpm -qa|grep -i mysql
-	[root@xxx ~]#rpm -e --noscripts  "上边的包名"
+	[root@xxx ~]#rpm -ev "上边的包名" --nodeps
+	[root@xxx ~]#rpm -e --noscripts  "上边的包名"  //上面不行就用这个
 
 ### 4.测试连接Mysql服务
 
@@ -118,6 +116,7 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
     [root@xxx ~]#mysql -u root
     #注意 密码设置时 5.7默认需要 大小写 + 数字 + 特殊字符
     mysql>UPDATE mysql.user SET authentication_string=PASSWORD('你的密码') where USER='root';
+    mysql>alter user 'root'@'localhost' identified by 'youpassword';
     #刷新
     mysql>flush privileges;
     #退出
@@ -147,8 +146,9 @@ JDK版本7u71以后，Java会在同一时间发布2个版本，其中：
 ### 6.设置远程访问（看情况选择）
 
 	#默认情况下 MySQL 是不允许远程连接的 允许任意主机通过 root 用户使用 密码连接到mysql服务器
-	mysql>alter user 'root'@'localhost' identified by 'youpassword';  
+	mysql>  //这两个都行
     mysql>grant all privileges on *.* to root@'%' identified by 'youpassword';
+    mysql>GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root' WITH GRANT OPTION;
     #刷新
     mysql>flush privileges;
 

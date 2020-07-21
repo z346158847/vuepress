@@ -92,3 +92,28 @@ vue项目部署
 生产接口为后台接口
 
 history去除
+
+
+跨域问题
+1.vue开发时开启跨域
+
+    proxyTable: {
+          '/api/**': {
+            changeOrigin: true,
+        },
+
+2.axiox跨域导致cookie失效
+
+    axios.defaults.withCredentials = true
+
+3.跨域请求,关于后端session会话丢失的解决办法
+
+    tomcat，在conf/context.xml文件中，设置sessionId的cookieName别名，不和默认的jsessionid
+
+    <Context  sessionCookieName="SHGJSESSIONID"  sessionCookiePath="/">
+
+    weblogic
+    <session-descriptor>
+    <cookie-name>JSESSIONID1</cookie-name>
+    </session-descriptor>
+
