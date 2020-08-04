@@ -117,3 +117,14 @@ history去除
     <cookie-name>JSESSIONID1</cookie-name>
     </session-descriptor>
 
+
+
+iview坑Iview打包到生产环境时， woff 字体引用问题
+
+webpack.prod.conf.js
+usePostCSS: true  改为  false
+rules: utils.styleLoaders({
+      sourceMap: config.build.productionSourceMap,
+      extract: false,
+      usePostCSS: true
+    })
