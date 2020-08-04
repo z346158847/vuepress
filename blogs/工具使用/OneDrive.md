@@ -1,6 +1,6 @@
 ---
 title: OneDrive
-date: 2020-07-02
+date: 2020-08-04
 tags:
  - 工具
 categories:
@@ -15,5 +15,11 @@ OneDrive普通用户5G，淘宝买邀请链接升级10G，教育版5T（不稳�
 
 
 
-## ~~二、教育版申请方式~~
+## 二、教育版申请方式
 [申请地址](http://od.obagg.com)
+
+![](http://img.zwjblog.top/FmAL2H7sFOoaVf8V93m-n0WOz7Om)
+
+![](http://img.zwjblog.top/Fi_qeRe4u91D7eDoMzFjQX01-m6S)
+
+登录后按提示修改密码，刚开始可能不能使用OneDrive，1-3天后可以使用
