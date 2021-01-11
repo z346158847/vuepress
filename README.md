@@ -11,10 +11,10 @@ tagline: 我们一路奋战不是为了改变世界，而是为了不让世界�
 #   background: '#fff',
 #   borderRadius: '1rem',
 # }
-bgImage: /bg.jpg
-bgImageStyle: {
-  height: '450px'
-}
+#bgImage: /bg.jpg
+#bgImageStyle: {
+#  height: '450px'
+#}
 isShowTitleInHome: false
 actionText: Guide
 actionLink: /views/other/guide

@@ -45,9 +45,7 @@ git reset --hard  'id'  //回退版本
 
 
 # 六、Git中CRLF与LF的转换
-::: tip
-git config --global core.autocrlf true   //解决
-:::
+
 ```
 // 提交时转换为LF，检出时转换为CRLF
 git config --global core.autocrlf true   
@@ -73,6 +71,6 @@ git config --global core.safecrlf warn
 ```
 git rm -r --cached .
 git add .gitignore
-git commit -m “update .gitignore”
+git commit -m "update .gitignore"
 ```
 最后原因是.gitignore换行符为CR,改为CRLF就可以了
