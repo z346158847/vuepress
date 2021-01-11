@@ -78,3 +78,7 @@ categories:
        ./nginx -s stop 关闭
        
        ./nginx -s reload 重启
+
+
+## 配置https
+https://slproweb.com/products/Win32OpenSSL.html
